@@ -1,0 +1,101 @@
+.projects {
+  padding-bottom: 1rem;
+  #{&}-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(
+        to right,
+        rgba($color-primary, 0.9),
+        rgba($color-primary, 0.3)
+      ),
+      url("../assets/images/model-1.jpg") center top;
+    background-size: cover;
+    padding-bottom: 2rem;
+
+    h1 {
+      font: {
+        size: 32px;
+        weight: 600;
+      }
+    }
+  }
+  .projects-container {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 50vw;
+    justify-content: center;
+    grid-gap: 2rem;
+
+    .project {
+      position: relative;
+      border-bottom: 5px solid $color-secondary;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .project-btns {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: center;
+        z-index: 2;
+
+        .project-btn {
+          opacity: 0;
+          color: set-text-color($color-secondary);
+          @include transition-ease;
+
+          &:hover {
+            color: set-text-color(set-text-color($color-secondary));
+          }
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: rgba($color-secondary, 0.9);
+        @include transition-ease;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          top: 0;
+        }
+
+        .project-btn {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    left: 0.5rem;
+    align-items: center;
+  }
+}
+
+footer.about {
+  transform: rotate(90deg) translate(-5rem, -7rem);
+}

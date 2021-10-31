@@ -1,0 +1,38 @@
+.home {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(
+      to right,
+      rgba($color-primary, 0.9),
+      rgba($color-primary, 0.3)
+    ),
+    url("../assets/images/model-1.jpg") center top;
+  background-size: cover;
+
+  .titles {
+    width: 100%;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid set-text-color($color-primary);
+
+      span {
+        color: $color-secondary;
+        font-weight: 1000;
+      }
+    }
+  }
+}
